@@ -14,7 +14,7 @@ https://docs.spring.io/spring-framework/docs/5.2.9.RELEASE/spring-framework-refe
 * Injecting Beans into each other (@Autowired)
 
 =================================
-search: spring core maven dependency
+# search: spring core maven dependency
 https://mvnrepository.com/artifact/org.springframework/spring-core/5.3.2
 
 <!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->
