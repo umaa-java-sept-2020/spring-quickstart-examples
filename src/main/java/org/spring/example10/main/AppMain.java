@@ -1,6 +1,7 @@
 package org.spring.example10.main;
 
 
+import org.spring.example10.beans.Address;
 import org.spring.example10.beans.Employee;
 import org.spring.example10.beans.Person;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -14,12 +15,13 @@ public class AppMain {
         // specifying the package(s) where you have declared your classes as bean.
         // only those beans or objects will be created.
 
-        // prototype scope, need to specify with annotation @Scope
+        // prototype scope, need to specify the class with annotation @Scope. Here Address is prototype.
         // each request to context will give you different objects
-        Person p = context.getBean(Person.class);
-        Person p1 = context.getBean(Person.class);
+        Address a = context.getBean(Address.class);
+        Address a1 = context.getBean(Address.class);
 
-        System.out.println(p==p1);
+        // both the address objects will not same as they are prototype scoped
+        System.out.println(a==a1);
     }
 
     public static void singleTonScope(String[] args) {
@@ -29,6 +31,7 @@ public class AppMain {
         // specifying the package(s) where you have declared your classes as bean.
         // only those beans or objects will be created.
 
+        // singleton scope for a given context. only one instance of bean configuration is maintained for a given context.
         Person p = context.getBean(Person.class);
         Person p1 = context.getBean(Person.class);
 
